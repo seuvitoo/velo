@@ -45,4 +45,11 @@ test('deve exibir mensagem quando pedido não for encontrado', async ({ page }) 
     await expect(message2).toBeVisible();
     await expect(message3).toBeVisible();
     await expect(message4).toBeVisible();
+
+    await expect(page.locator('#root')).toMatchAriaSnapshot(`
+    - img
+    - heading "Pedido não encontrado" [level=3]
+    - paragraph: Verifique o número do pedido e tente novamente
+    `);
+    
 });

@@ -1,5 +1,7 @@
 import { test, expect } from '@playwright/test';
 
+import { gerarOrderRandomica } from '../suport/helpers';
+
 test.describe('Consulta de Pedidos', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/'); // use baseURL no config
@@ -20,7 +22,8 @@ test.describe('Consulta de Pedidos', () => {
   });
 
   test('deve exibir mensagem quando pedido não for encontrado', async ({ page }) => {
-    const order = 'VLO-123456';
+    const order = gerarOrderRandomica();
+
     await page.getByTestId('search-order-id').fill(order);
     await page.getByTestId('search-order-button').click();
 

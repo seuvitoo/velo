@@ -12,8 +12,8 @@ export default defineConfig({
     timeout: 5000,
   },
   
-  //Run tests from the "tests" directory, relative to this configuration file.
-  testDir: './tests',
+  // Run tests from the "playwright/tests" directory, relative to this configuration file.
+  testDir: './playwright/tests',
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
